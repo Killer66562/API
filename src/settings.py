@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     diabetes_model_path: str
 
     fs_root: str = "static"
+    models_root: str = "predict_models"
 
     model_config = SettingsConfigDict(env_file=".env")
 
