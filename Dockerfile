@@ -9,4 +9,4 @@ COPY src /app
 
 EXPOSE 8000
 
-CMD [ "python", "app.py" ]
+CMD ["/bin/sh", "-c", "alembic upgrade head; python app.py"]

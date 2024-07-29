@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel
 
 from datetime import datetime
@@ -29,3 +31,16 @@ class FullMappingKeySchema(MappingKeySchema):
 
 class FullMappingValueSchema(MappingValueSchema):
     mapping_key: MappingKeySchema
+
+
+class DiabetesPredictInput(BaseModel):
+    gender: Literal[0, 1]
+    age: int
+    bmi: float
+    hba1c: float
+    blood_sugar: float
+
+
+class DiabetesPredictOutput(BaseModel):
+    have_diabetes: bool
+    diabetes_percentage: float

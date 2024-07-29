@@ -3,7 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import file, mapping_key, mapping_value
+from routes import file, mapping_key, mapping_value, predict
 from settings import settings
 
 
@@ -26,6 +26,7 @@ async def main():
 app.include_router(file.router)
 app.include_router(mapping_key.router)
 app.include_router(mapping_value.router)
+app.include_router(predict.router)
 
 @app.get("/")
 def hello():

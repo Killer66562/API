@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     app_port: int = 8000
 
     db_connection: str
+    diabetes_model_path: str
 
     fs_root: str = "static"
 
